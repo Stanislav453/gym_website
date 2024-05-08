@@ -78,6 +78,15 @@ export default {
       modalIcon: ["clamp(2rem, 5vw, 4rem)"],
       aboutMy: ["clamp(1.2rem, 5vw, 1.5rem)"],
       hamburgerNavFontSize: ["2rem"],
+
+      serviceModalHightText: [
+        "clamp(1.1rem, 5vw, 1.5rem)",
+        {
+          lineHeight: "2rem",
+          letterSpacing: "-0.01em",
+          fontWeight: "900",
+        },
+      ],
     },
     extend: {
       colors: {
@@ -101,6 +110,7 @@ export default {
         boxShadow: "box-shadow",
         top: "top, opacity",
         color: "color",
+        tranform: "transform",
       },
     },
   },
