@@ -1,13 +1,23 @@
+import { useState } from "react";
 import adelaImg from "../assets/photo/Adela-foto.jpg";
 import { HeaderButton } from "../components/HeaderButton/HeaderButton";
+import { ModalOfServices } from "../components/ModalOfServices/ModalOfServices";
 import { SectionHeader } from "../components/SectionHeader/SectionHeader";
 import { buttonHeader } from "../data/headerData";
 
 const Home = () => {
+  const [ serviceName, setServiceName ] = useState('')
   const hightText = "adela završanová";
   const secondText = "personal & onnline coach";
   const citation =
     "Byť zdravý a fit pre mňa neznamená mať len pekné telo. Ale sa aj dobre cítiť v akomkoľvek období života.";
+
+    const setActualServiceName = (setName:string) => {
+      setServiceName(setName)
+    }
+
+
+
   return (
     <main className="grid grid-cols-1 md:grid-cols-2 gap-2 ">
       <article className="relative flex flex-col justify-center gap-5">
@@ -17,7 +27,11 @@ const Home = () => {
           {buttonHeader.map((oneButton, index) => {
             const { text, variant } = oneButton;
             return (
-              <HeaderButton key={index} variant={variant}>
+              <HeaderButton
+                onClick={() => setActualServiceName(text)}
+                key={index}
+                variant={variant}
+              >
                 {text}
               </HeaderButton>
             );
@@ -31,6 +45,16 @@ const Home = () => {
           alt="adela_zavrsanova"
         />
       </article>
+      {/* {serviceName && (
+        <ModalOfServices
+          serviceName={serviceName}
+          setServiceName={setServiceName}
+        />
+      )} */}
+      <ModalOfServices
+        serviceName={serviceName}
+        setServiceName={setServiceName}
+      />
     </main>
   );
 };
