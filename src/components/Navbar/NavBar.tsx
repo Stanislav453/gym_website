@@ -29,7 +29,7 @@ export const NavBar = () => {
         <RxHamburgerMenu className="text-hamburgerNavFontSize text-hamburgerMenuColor" />
       </button>
       <ul
-        className={`absolute z-50 ${
+        className={`absolute z-40 ${
           isActive ? "top-[83px] opacity-100" : "top-[-200px] opacity-0 md:opacity-100"
         } md:top-0 left-0 md:relative w-full flex flex-col md:flex-row  md:gap-16 tracking-widest transition-top duration-300`}
       >
