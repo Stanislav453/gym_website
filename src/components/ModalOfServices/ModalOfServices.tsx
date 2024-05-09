@@ -30,7 +30,13 @@ export const ModalOfServices = ({
     setServicesData(serviceName);
   }, [modalSrviceData]);
 
+  console.log(modalSrviceData);
 
+  const articleServiceData = ( category, underCategory ) => {
+    console.log(category, underCategory);
+    
+  }
+   
 
   return (
     <section className="flex fixed top-0 z-50 w-full h-full bg-modalBackgroundColor">
@@ -60,7 +66,7 @@ export const ModalOfServices = ({
                       <li key={index}>
                         <button
                           className="w-full bg-subMainColor py-3 uppercase mt-[.1rem]"
-                          onClick={ () => { setArticleData(index)  } }
+                          onClick={ () => { articleServiceData(serviceHight, categoryTitle); } }
                         >
                           {categoryTitle}
                         </button>
