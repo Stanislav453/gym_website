@@ -94,9 +94,11 @@ export default {
         modalBackgroundColor: "rgba(0, 0, 0, 0.4)",
         referencesArticleBackground: "rgb(211 211 211)",
         hamburgerMenuColor: "#fff",
+        mainColor: "#94A3B8",
+        subMainColor: "#8a95a6"
       },
       backgroundImage: {
-        "header-article": "url('./src/assets/rectangel.webp')",
+        "header-article": "url('./assets/rectangel.webp')",
       },
       dropShadow: {
         headerTextShadow: "4px 4px #b8b8b8",
