@@ -16,8 +16,6 @@ const Home = () => {
       setServiceName(setName)
     }
 
-
-
   return (
     <main className="grid grid-cols-1 md:grid-cols-2 gap-2 ">
       <article className="relative flex flex-col justify-center gap-5">
@@ -40,21 +38,22 @@ const Home = () => {
       </article>
       <article className="h-full w-full">
         <img
+          height="500"
           className="w-full h-full max-h-dvh object-top	object-cover"
           src={adelaImg}
           alt="adela_zavrsanova"
         />
       </article>
-      {/* {serviceName && (
+      {serviceName && (
         <ModalOfServices
           serviceName={serviceName}
           setServiceName={setServiceName}
         />
-      )} */}
-      <ModalOfServices
+      )}
+      {/* <ModalOfServices
         serviceName={serviceName}
         setServiceName={setServiceName}
-      />
+      /> */}
     </main>
   );
 };
