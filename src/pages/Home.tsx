@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <main className="grid grid-cols-1 md:grid-cols-2 gap-2 ">
-      <article className="relative flex flex-col justify-center gap-5">
+      <article className="relative flex flex-col justify-center gap-5 pb-4">
         <SectionHeader hightText={hightText} secondHightText={secondText} />
         <p className="text-citateInHeader mx-5">{citation}</p>
         <div className="flex flex-col md:flex-row gap-5 mx-5">

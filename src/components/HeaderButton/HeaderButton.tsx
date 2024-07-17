@@ -1,7 +1,7 @@
 import { type HeaderButtonProps } from "../../type";
 
 const buttonBasicStyle =
-  "flex-1 px-8 py-4 text-headerButton uppercase hover:shadow-HeadoeButtonHover transition-box-shadow";
+  'flex-1 px-8 py-4 text-headerButton uppercase hover:shadow-HeaderButtonHover transition-boxShadow';
 
 export const HeaderButton = ({ variant, children, onClick }: HeaderButtonProps) => {
   return (

@@ -1,8 +1,12 @@
-import { type modalServivesProps } from "../../type";
-import { useEffect, useState } from "react";
-import { FaCircleXmark } from "react-icons/fa6";
-import { zonaData } from "../../data/zonaData";
-import { litvaFitnessData } from "../../data/litvaFitnessData";
+import { type modalServivesProps } from '../../type';
+import { useEffect, useState } from 'react';
+import { FaCircleXmark } from 'react-icons/fa6';
+import { zonaData } from '../../data/zonaData';
+import { litvaFitnessData } from '../../data/litvaFitnessData';
+import { FaChevronLeft } from 'react-icons/fa6';
+import staraBystricaImg from '../../assets/map/litva-fitness-stara-bystrica.webp';
+import zborovImg from '../../assets/map/litva-fitness-zborov.webp';
+import zona from '../../assets/map/zona-zilina.webp';
 
 type TarticleServiceData = {
   categoryTitle: string;
@@ -26,16 +30,16 @@ export const ModalOfServices = ({
 
   const setServicesData = (name: string) => {
     switch (name) {
-      case "litva fitness": {
+      case 'litva fitness': {
         setModalServiceData(litvaFitnessData);
         break;
       }
-      case "zØna": {
+      case 'zØna': {
         setModalServiceData(zonaData);
         break;
       }
       default:
-        console.log("data do not set");
+        console.log('data do not set');
     }
   };
 
@@ -66,28 +70,28 @@ export const ModalOfServices = ({
   };
 
   return (
-    <section className="flex fixed top-0 z-50 w-full h-full bg-modalBackgroundColor">
-      <button className="absolute top-2 right-2 ">
+    <section className='flex fixed top-0 z-50 w-full h-full bg-modalBackgroundColor'>
+      <button className='absolute top-2 right-2 z-50 drop-shadow-xl'>
         <FaCircleXmark
-          className="text-modalIcon text-white cursor-pointer transition-transform hover:scale-110"
+          className='text-modalIcon text-white cursor-pointer transition-transform hover:scale-110'
           onClick={() => {
-            setServiceName("");
+            setServiceName('');
             setInfoActive(false);
             setActiveCategory(null);
           }}
         />
       </button>
-      <article className="w-full md:w-64 h-full bg-gradient-to-b from-slate-50 to-slate-400">
-        <h2 className="text-serviceModalHightText uppercase text-center">
+      <article className='w-full md:w-64 h-full bg-gradient-to-b from-slate-50 to-slate-400 overflow-y-auto'>
+        <h2 className='text-serviceModalHightText uppercase text-center'>
           {modalSrviceData.hightText}
         </h2>
-        <h3 className="uppercase text-center">{modalSrviceData.title}</h3>
-        <ul className="flex flex-col gap-1 pt-5">
+        <h3 className='uppercase text-center'>{modalSrviceData.title}</h3>
+        <ul className='flex flex-col gap-1 pt-5'>
           {modalSrviceData.servicesData.map((oneButton, index) => {
             const { serviceHight, servicesCategory } = oneButton;
             return (
-              <li key={index} className="mx-1">
-                <button className="w-full bg-mainColor py-3 uppercase">
+              <li key={index} className='mx-1'>
+                <button className='w-full bg-mainColor py-3 uppercase font-semibold cursor-default'>
                   {serviceHight}
                 </button>
                 <ul>
@@ -96,7 +100,7 @@ export const ModalOfServices = ({
                     return (
                       <li key={index}>
                         <button
-                          className="w-full bg-subMainColor py-3 uppercase mt-[.1rem]"
+                          className='w-full bg-subMainColor py-3 uppercase mt-[.1rem] hover:bg-gray-500 transition-bgColor'
                           onClick={() =>
                             handleCategoryClick(serviceHight, categoryTitle)
                           }
@@ -111,11 +115,24 @@ export const ModalOfServices = ({
             );
           })}
         </ul>
+        <ul className='flex flex-col gap-2 pt-4 pb-4'>
+          {modalSrviceData.location.map((item) => {
+            const { title, link, img } = item;
+            return (
+              <li key={title}>
+                <h3 className='text-center text-articleLocation'>{title}</h3>
+                <a className='block px-1' href={link}>
+                  <img className='min-h-105' src={img} alt={title} />
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </article>
       <article
         className={` ${
-          infoActive ? "w-2/4 h-full" : "w-0"
-        }  bg-subMainColor transition-[width] `}
+          infoActive ? 'w-full md:w-2/4 ' : 'w-0 '
+        } h-full absolute md:relative bg-subMainColor transition-[width] overflow-y-auto md:overflow-hidden pb-5 `}
       >
         {serviceArticleData?.map((item: TarticleServiceData, index: number) => {
           const {
@@ -130,21 +147,27 @@ export const ModalOfServices = ({
             <div
               key={index}
               className={` ${
-                infoActive ? "opacity-100" : "opacity-0"
+                infoActive ? 'opacity-100' : 'opacity-0'
               }  transition-opacity`}
             >
-              <h2 className=" text-serviceModalHightText uppercase text-center pt-2">
+              <h2 className=' text-serviceModalHightText uppercase text-center pt-2 relative px-12'>
+                <button
+                  className='absolute left-5 top-3.5 text-white  transition-transform hover:scale-110'
+                  onClick={() => setInfoActive(false)}
+                >
+                  <FaChevronLeft />
+                </button>
                 {categoryTitle}
               </h2>
-              <ul className="flex gap-2 flex-col px-5 pt-5">
+              <ul className='flex gap-2 flex-col px-5 pt-5'>
                 {list.map((oneList, index) => {
-                  return <li key={index}  >{oneList}</li>;
+                  return <li key={index}>{oneList}</li>;
                 })}
               </ul>
-              <p className="px-5">{sale && sale}</p>
-              <p className="px-5">{price}</p>
-              <p className="px-5">{alertInfo && alertInfo}</p>
-              <p className="px-5">{alertInfoSecond && alertInfoSecond}</p>
+              <p className='px-5'>{sale && sale}</p>
+              <p className='px-5'>{price}</p>
+              <p className='px-5'>{alertInfo && alertInfo}</p>
+              <p className='px-5'>{alertInfoSecond && alertInfoSecond}</p>
             </div>
           );
         })}
