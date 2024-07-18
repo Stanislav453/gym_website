@@ -24,24 +24,26 @@ export const NavBar = () => {
 
 
   return (
-    <nav className="flex items-center">
-      <button className=" md:hidden bg-navHover p-4" onClick={navToggle}>
-        <RxHamburgerMenu className="text-hamburgerNavFontSize text-hamburgerMenuColor" />
+    <nav className='flex items-center'>
+      <button className=' md:hidden bg-navHover p-4' onClick={navToggle}>
+        <RxHamburgerMenu className='text-hamburgerNavFontSize text-hamburgerMenuColor' />
       </button>
       <ul
-        className={`absolute z-40 ${
-          isActive ? "top-[83px] opacity-100" : "top-[-200px] opacity-0 md:opacity-100"
-        } md:top-0 left-0 md:relative w-full flex flex-col md:flex-row  md:gap-16 tracking-widest transition-top duration-300`}
+        className={`absolute z-40 top-[-200px] opacity-0 md:opacity-100 ${
+          isActive
+            ? 'top-[83px] opacity-100'
+            : 'top-[-200px] opacity-0 md:opacity-100'
+        } md:top-0 left-0 md:relative w-full flex flex-col md:flex-row gap-lowGap md:gap-16 tracking-widest transition-top duration-300 bg-white`}
       >
         {NavBarData.map((navItem, key) => {
           {
             return (
-              <li key={key} className="flex">
+              <li key={key} className='flex'>
                 <Link
                   to={`/${navItem}`}
-                  onClick={ () => actualizeNavState(key)}
+                  onClick={() => actualizeNavState(key)}
                   className={`w-full text-white md:text-black text-center bg-navHover md:bg-white py-2 z-50 uppercase font-semibold md:hover:text-navHover transition-color ${
-                    key === id && "text-navHover"
+                    key === id && 'text-navHover'
                   } `}
                 >
                   {navItem}

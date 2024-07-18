@@ -7,7 +7,7 @@ export const SectionHeader = ({
   return (
     <header className="relative w-full flex flex-col justify-center items-center h-48">
       {secondHightText && (
-        <h2 className="absolute top-[-6px] left-[10%] z-30 text-secondHightText uppercase drop-shadow-secondHightTextDropShadow">
+        <h2 className="absolute top-[-6px] left-[10%] z-20 text-secondHightText uppercase drop-shadow-secondHightTextDropShadow">
           {secondHightText}
         </h2>
       )}

@@ -7,6 +7,7 @@ import { FaChevronLeft } from 'react-icons/fa6';
 import staraBystricaImg from '../../assets/map/litva-fitness-stara-bystrica.webp';
 import zborovImg from '../../assets/map/litva-fitness-zborov.webp';
 import zona from '../../assets/map/zona-zilina.webp';
+import BlurryLoadingImage from '../BlurryLoadingImage';
 
 type TarticleServiceData = {
   categoryTitle: string;
@@ -121,8 +122,13 @@ export const ModalOfServices = ({
             return (
               <li key={title}>
                 <h3 className='text-center text-articleLocation'>{title}</h3>
-                <a className='block px-1' href={link}>
-                  <img className='min-h-105' src={img} alt={title} />
+                <a className='block w-full px-1' href={link}>
+                  <BlurryLoadingImage
+                    preview={img}
+                    image={img}
+                    alt={title}
+                    divStyleClass={'min-h-105'}
+                  />
                 </a>
               </li>
             );

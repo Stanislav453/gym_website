@@ -37,7 +37,7 @@ export const ImgModal = ({ id, setModalState }: imgModalProps) => {
   };
 
   return (
-    <div className="fixed top-0 flex justify-center align-center w-full h-full bg-modalBackgroundColor">
+    <div className="fixed top-0 z-40 flex justify-center align-center w-full h-full bg-modalBackgroundColor">
       <button>
         <FaCircleXmark
           className="absolute top-2 right-2 text-modalIcon text-white	cursor-pointer"

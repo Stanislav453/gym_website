@@ -14,16 +14,16 @@ const Gallery = () => {
       <header>
         <SectionHeader hightText={hightText} />
       </header>
-      <main className="flex flex-wrap gap-5 justify-center w-full h-full pt-16">
+      <main className='flex flex-wrap gap-5 justify-center w-full h-full pt-16'>
         {galleryData.map((onePhoto, index) => {
           return (
             <div
               key={index}
-              className=" flex-initial w-72 h-80	"
+              className=' flex-initial w-72 h-80	cursor-pointer hover:scale-105 transition-transform'
               onClick={() => setModalState({ isOpen: true, id: index })}
             >
-              {" "}
-              <Img src={onePhoto.src} />{" "}
+              {' '}
+              <Img src={onePhoto.src} />{' '}
             </div>
           );
         })}

@@ -103,6 +103,8 @@ export default {
         hamburgerMenuColor: '#fff',
         mainColor: '#94A3B8',
         subMainColor: '#8a95a6',
+        basicImgBg:
+          'linear-gradient(90deg, rgba(205,205,205,1) 0%, rgba(219,219,219,1) 100%)',
       },
       backgroundImage: {
         'header-article': "url('./assets/rectangel.webp')",
@@ -124,6 +126,7 @@ export default {
       },
       spacing: {
         105: '6.5625rem',
+        lowGap: '1px',
       },
     },
   },
