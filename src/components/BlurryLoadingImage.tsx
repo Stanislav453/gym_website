@@ -19,6 +19,7 @@ const BlurryLoadingImage = ({
 }: BlurryLoadingImageType) => {
   const [currentImage, setCurrentImage] = useState(preview);
   const [loading, setLoading] = useState(true);
+  console.log('current Img', currentImage);
 
   const fetchImage = (src: string) => {
     const loadingImage = new Image();
@@ -40,6 +41,7 @@ const BlurryLoadingImage = ({
           filter: `${loading ? 'blur(20px)' : ''}`,
           transition: '1s filter linear',
           width: '100%',
+          height: `${loading ? '100dvh' : '100%'}`,
           background: bgColor,
         }}
         src={currentImage}

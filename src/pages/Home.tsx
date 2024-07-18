@@ -38,13 +38,13 @@ const Home = () => {
           })}
         </div>
       </article>
-      <article className='h-full w-full blurBg'>
+      <article className='h-full w-full '>
         <BlurryLoadingImage
           preview={adelImgBlur}
           image={adelaImg}
           alt={'Adela_Zavrsanova'}
           imageStyleClass={'max-h-dvh object-top object-cover'}
-          divStyleClass={'h-dvh'}
+          divStyleClass={'blurBg'}
         />
 
         {/* <img

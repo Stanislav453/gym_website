@@ -1,8 +1,10 @@
+import React from 'react';
 import { SectionHeader } from '../components/SectionHeader/SectionHeader';
 import img from '../assets/about_my/adel-foto3.webp';
 import imgBlur from '../assets/about_my/adel-foto3-blur.webp';
 import { aboutMyData } from '../data/aboutMyData';
 import BlurryLoadingImage from '../components/BlurryLoadingImage';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const AboutMy = () => {
   const hightText = 'o mne';
@@ -19,7 +21,7 @@ export const AboutMy = () => {
             image={img}
             alt={'Adela_Zavrsanova'}
             imageStyleClass={'max-h-dvh object-top object-cover'}
-            divStyleClass={'h-dvh'}
+            divStyleClass={'blurBg'}
           />
         </article>
       </main>
